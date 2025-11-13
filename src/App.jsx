@@ -19,13 +19,14 @@ function App() {
     setRespSub(parseFloat(n1) - parseFloat(n2))
     setRespMult(parseFloat(n1) * parseFloat(n2))
     setRespDiv(parseFloat(n1) / parseFloat(n2))
+    setError('Digite valores numéricos para calcular')
     }else{
       setError('Digite valores numéricos para calcular')
     }
   }, [n1, n2])
 
   return (
-    <>
+    <div className={styles.wrapAll}>
       <h1 className={styles.title}>Calculadora</h1>
       <p>{error}</p>
       <div className={styles.wrap}>
@@ -33,26 +34,26 @@ function App() {
         <input type="number" onChange={(e) => setN2(e.target.value)} value={n2} placeholder='Insira outro número'/>
       </div>
 
-      <div className={'styles.wrapResps'}>
+      <div className={styles.wrapResps}>
         <h2>Resultado da soma</h2>
         <h3>{respSoma}</h3>
       </div>
 
-      <div className={'styles.wrapResps'}>
+      <div className={styles.wrapResps}>
         <h2>Resultado da subtração</h2>
         <h3>{respSub}</h3>
       </div>
 
-      <div className={'styles.wrapResps'}>
+      <div className={styles.wrapResps}>
         <h2>Resultado da multiplicação</h2>
         <h3>{respMult}</h3>
       </div>
 
-      <div className={'styles.wrapResps'}>
+      <div className={styles.wrapResps}>
         <h2>Resultado da divisão</h2>
         <h3>{respDiv}</h3>
       </div>
-    </>
+      </div>
   )
 }
 
